@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>悦崽自动问答系统</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        label {
+            margin-top: 10px;
+            font-size: 14px;
+            display: block;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>悦崽自动问答系统</h1>
+        <label for="age">悦崽今年几多岁!：</label>
+        <input type="number" id="age" placeholder="请输入年龄" />
+
+        <label for="height">悦崽有几高!：</label>
+        <input type="number" id="height" placeholder="请输入身高" />
+
+        <label for="weight">悦崽有几重!：</label>
+        <input type="number" id="weight" placeholder="请输入体重" />
+
+        <button onclick="calculate()">见证魔法!</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculate() {
+            var age = document.getElementById("age").value;
+            var height = document.getElementById("height").value;
+            var weight = document.getElementById("weight").value;
+
+            if (age && height && weight) {
+                var happyBeans = Math.floor(age * height * weight);
+                document.getElementById("result").innerHTML = "悦崽今日一共有 " + happyBeans + " 粒开心豆!";
+            } else {
+                document.getElementById("result").innerHTML = "请输入完整信息！";
+            }
+        }
+    </script>
+</body>
+</html>
